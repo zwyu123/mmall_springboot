@@ -15,11 +15,10 @@ public class CategoryService {
     @Autowired
     private CategoryMapper categoryMapper;
 
-    public List<Category> getChildrenParallelCategory(Integer categpryId) {
-        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categpryId);
+    public List<Category> getChildrenParallelCategory(Integer id) {
+        List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(id);
         if (CollectionUtils.isEmpty(categoryList)) {
             log.info("未找到当前分类的子分类");
-            throw new RuntimeException("未找到当前分类的子分类");
         }
         return categoryList;
     }

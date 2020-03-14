@@ -16,8 +16,8 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/getChildrenParallelCategory/{categoryId}")
-    public List<Category> getChildrenParallelCategory(@PathVariable Integer categoryId) {
-        return categoryService.getChildrenParallelCategory(categoryId);
+    @GetMapping("/getChildrenParallelCategory/{id}")
+    public List<Category> getChildrenParallelCategory(@PathVariable Integer id) {
+        return categoryService.getChildrenParallelCategory(id);
     }
 }
